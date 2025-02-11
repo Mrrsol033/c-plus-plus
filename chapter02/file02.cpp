@@ -15,7 +15,7 @@ int main()
         system("cls");
         _sleep(700);
         cout << "[+] Find Day in a Month  [+]" << endl;
-        cout << ">>> Enter month to find (1-12): ";
+        cout << ">>> Enter month to find : ";
         cin >> month;
         switch (month)
         {
