@@ -281,7 +281,7 @@ void oddAndEvenFinder()
             cout << endl;
             break;
         case 2:
-            cout << " enter n: ";
+            cout << " enter : ";
             cin >> n;
             for (int i = 1; i <= n; i++)
             {
