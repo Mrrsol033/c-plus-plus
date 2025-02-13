@@ -6,6 +6,7 @@
         void dayFinder();
         void taxFinder();
         void oddAndEvenFinder();
+        
     int main(){
         system("cls");
         int choice;
@@ -50,7 +51,7 @@
     
        while (true){
         system("cls");
-        _sleep(700);
+       _sleep(700);
         cout<<" Choose operator :"<<endl;
         cin>>op;
                 switch(op){
@@ -60,7 +61,7 @@
                 cout<<" Enter value2 : "; cin >>value2;
                 result = value1 - value2;
                 cout<<" The result is: "<<result<<endl;
-                _sleep(500);
+               _sleep(500);
             break;
             case '+' :
                 cout<<" Enter value1 :";cin>>value1;
@@ -81,44 +82,94 @@
                 cout<<" Enter value2 : "; cin >>value2;
                 result = (float) value1 / value2;
                 cout<<" The result is: "<<result<<endl;
-                 _sleep(500);
+                _sleep(500);
                 break;
                  cout<<" The result is: "<<result<<endl;
             default:
                 cout<<" Invalid operator !! Choose again "<<endl;
                 break;
                 }   
-               
-    
-               cout << " Press any key to continue, key 'Q' to quit " << endl;
-                    cin.ignore();
-       
-    
-            if (op == 1){
-                cout<<" continue....."<<endl;
-                break;
-            }else if ( op == 'Q'||op =='q'){
-                cout<<" Quitting...."<<endl;
-               break;
-            }
+                 
+                cout << " Press any key to continue, key 'Q' to quit " << endl;
+                cin.ignore();
+                if (cin.get() == 'q' || cin.get()=='Q')
+                {
+                    cout << " Exit the program " << endl;
+                    break;
+                }
         }  
     }
 //day finder function 
 void dayFinder(){
-    int day, date, month, year;
-        cout<<" Enter date(1-31):";cin>>date;
-        cout<<" Enter month(1-12):"; cin>>month;
-        cout<<" Enter year :"; cin>>year;
-            if(month <3){
-                month += 12;
-                year;
-            }
+        
+        int day, date, month, year;
+      
+       while (true)
+       {
+      
+        cout<<" [+]--Day Finder--[+]"<<endl;
+        cout << "Enter date (dd): ";
+        cin >> date;
+        cout << "Enter month (mm): ";
+        cin >> month;
+        cout << "Enter year (yyyy): ";
+        cin >> year;
 
-        int i = (date + (13*(month + 1)) / 5 + year + year / 4 - year / 100 + year / 400) % 7;
-            string dayOfweek[] = {"Saturdsy", "Sunday", "Monday", "Tuesday", "Thursday", "Friday"};
-        cout<<" The day is : "<<dayOfweek[i]<<endl;
+        if (month < 3) {
+            month += 12;
+            year -= 1;
+        }
+    
+      int h = (date + (13 * (month + 1)) / 5 + year + year / 4 - year / 100 + year / 400) % 7;
+       
+        switch (h) {
+            case 0:
+                cout << "Saturday" << endl;
+                //cout<<" The day is :"<<h<<endl;
+                break;
+            case 1:
+                cout << "Sunday" << endl;
+                //cout<<" The day is :"<<h<<endl;
+                break;
+            case 2:
+                cout << "Monday" << endl;
+                //cout<<" The day is :"<<h<<endl;
+                break;
+            case 3:
+                cout << "Tuesday" << endl;
+                //cout<<" The day is :"<<h<<endl;
+                break;
+            case 4:
+                cout << "Wednesday" << endl;
+                //cout<<" The day is :"<<h<<endl;
+                break;
+            case 5:
+                cout << "Thursday" << endl;
+                //cout<<" The day is :"<<h<<endl;
+                break;
+            case 6:
+                cout << "Friday" << endl;
+               // cout<<" The day is :"<<h<<endl;
+                break;
+            default:
+                cout << "Invalid calculation!" << endl;
+                break;
+        }
+        if (month >= 1 && month <= 12)
+        cout << "Month = " << month << " Has " << day << " days" << endl;
+             // option to quite the program
+      cout << "-------- <<Press any key to continue or 'q' to quit>>--------" << endl;
+
+      cin.ignore();
+      
+            if (cin.get()=='q' || cin.get()=='Q')
+      {
+          cout<<" Quitting ---"<<endl;
+          break;
+      }
+    
+    }
 }
-
 //tax finder function 
 void taxFinder(){
     system("cls");
@@ -132,7 +183,7 @@ void taxFinder(){
         char continueInput; 
         char another; 
      
-        do{ 
+        while(true){
             cout << "Login" << endl; 
                      cout << "Enter username: "; 
             cin >> usename; 
@@ -189,9 +240,7 @@ void taxFinder(){
             } else { 
                 continueInput = 'N'; 
                 } 
-            cout << "Enter choice:"; 
-            cin >> choice; 
-     
+
             switch(choice) { 
                 case 1: 
                     // Example placeholder for viewing employees 
@@ -251,9 +300,19 @@ void taxFinder(){
    // cout<<" Your annual income in per year : "<<salary * month<<"$"<<endl;
     cout << fixed << setprecision(2);
     cout << "Your tax is: " << taxpercentage<<"%"<< endl;
-    cout<<" Tax to be paid : "<<tax<<"$"<<endl;
-} while(choice!=0 && choice !=0);   
+    cout<<" Tax to be paid : "<<tax<<"$"<<endl;   
+ // option to quite the program
+ cout << "-------- <<Press any key to continue or 'q' to quit>>--------" << endl;
+
+    cin.ignore();
+    
+        if (cin.get()=='q' || cin.get()=='Q')
+    {
+        cout<<" Quitting ---"<<endl;
+       
+    }
 }
+        }
 //odd/even finder function 
 
 void oddAndEvenFinder()
@@ -288,7 +347,7 @@ void oddAndEvenFinder()
                 if (i % 2 == 0)
                     continue;
                 cout << " " << i;
-                _sleep(500);
+               _sleep(500);
             }
             cout << endl;
         default:

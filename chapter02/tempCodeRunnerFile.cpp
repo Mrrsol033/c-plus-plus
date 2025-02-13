@@ -1,2 +1,1 @@
-
-                cout << " " << i;
+cout<<" The day is :"<<h<<endl;
