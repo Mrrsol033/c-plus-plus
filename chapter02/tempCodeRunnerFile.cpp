@@ -1,1 +1,2 @@
-cout<<" The day is :"<<h<<endl;
+const int passCode = 02003;
+        int userPasscode = 0;

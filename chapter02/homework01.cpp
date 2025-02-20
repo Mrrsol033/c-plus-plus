@@ -169,15 +169,16 @@ void dayFinder(){
       }
     
     }
-}
+} 
 //tax finder function 
 void taxFinder(){
     system("cls");
         double tax, income = 0;
         int  taxpercentage =0;
-        string usename, password; 
-        int id; 
-        string name; // Use string for name 
+        string name;
+    const int passCode = 02030;
+    int userPasscode = 0;
+        int id;  // Use string for name 
         int salary, wage, days;
         int choice, month, annualIncome;
         char continueInput; 
@@ -185,12 +186,10 @@ void taxFinder(){
      
         while(true){
             cout << "Login" << endl; 
-                     cout << "Enter username: "; 
-            cin >> usename; 
-                     cout << "Enter password: "; 
-            cin >> password; 
-             
-                     cout << "Login" << endl; 
+            cout<<" Enter your name :"; cin>>name;
+                     cout << "Enter user passcode: "; 
+            cin >> userPasscode; 
+                     cout << "Enter password: ";
                      cout << "Enter id: "; 
             cin >> id; 
                   //cout << "Enter usename: ";cin >> name; 
@@ -200,38 +199,17 @@ void taxFinder(){
                     cout<<" Enter Month :"; cin>>month; 
                     salary = wage * days;
                     annualIncome = salary * month;
-                    //cout<<" Your salary in a month is :"<<salary<<"$"<<endl;
-                   // float taxmoney = salary * (tax/(float)100);
-                    //salary = salary - taxmoney; 
-                    //cout << " Main Menu" << endl;
-                    //cout<< "choice career:"; cin>>choice; 
+                    cout<<"Your passcode is :"<<userPasscode<<endl;
+                    cout<<" Your id is :"<<id<<endl;
+                    cout<<" Your name is :"<<name<<endl;
+                    cout<<" Select your career :"<<endl;
                     cout << "1. UX/UI design " << endl; 
                  cout << "2. Stuff namagement " << endl; 
                  cout << "3. Stock management " << endl; 
                  cout << "4. Software Development " << endl; 
                  cout << "5. CyberSecurity " << endl; 
                  cout << "6.AI Development " << endl; 
-           //      cout<<" Your salary is :"<<salary<<"$"<<endl;
-              //   cout << "0. Exit" << endl; 
-      //              if(month <=12){
-    //                   annualIncome  = salary * 12;
-  //                     cout<<" Annual income is :"<<annualIncome<<"$"<<endl;
-//
-                //    }else if(month !=13)
-              //          cout<<" choice wrong!"<<endl;                     
-                    
-
-
-                
-
-              /*   cout << "1. UX/UI design " << endl; 
-                 cout << "2. Stuff namagement " << endl; 
-                 cout << "3. Stock management " << endl; 
-                 cout << "4. Software Development " << endl; 
-                 cout << "5. CyberSecurity " << endl; 
-                 cout << "6.AI Development " << endl; 
-                 //cout<<" Your salary is :"<<salary<<"$"<<endl;
-                 cout << "0. Exit" << endl;*/ 
+                  
              
     if (choice != 0) { 
             cout << "\nSelect Your Career (Y/N): "; 
@@ -245,32 +223,38 @@ void taxFinder(){
                 case 1: 
                     // Example placeholder for viewing employees 
                     cout << "UX/UI Design  ." << endl; 
+                    cout<<" Your salary is:"<<salary<<"$"<<endl;
                     break; 
                 case 2: 
                     // Example placeholder for viewing employees 
                     cout << "Stuff management ." << endl; 
+                    cout<<" Your salary is:"<<salary<<"$"<<endl;
                     break; 
                 case 3: 
                     cout << "Stock management ." << endl; 
+                    cout<<" Your salary is:"<<salary<<"$"<<endl;
                     break; 
                 case 4: 
                     cout << "Sotfware Development." << endl; 
+                    cout<<" Your salary is:"<<salary<<"$"<<endl;
                     break;
                 case 5: 
                     cout << "CyberSecurity." << endl; 
+                    cout<<" Your salary is:"<<salary<<"$"<<endl;
                     break;
                 case 6: 
-                    cout << "AI Development ." << endl; 
+                    cout << "AI Development ." << endl;
+                    cout<<" Your salary is:"<<salary<<"$"<<endl; 
                     break;
                 case 0: 
                     cout << "Exiting the program." << endl; 
                     break; 
                 default: 
-                    cout << "Invalid choice. Please try again." << endl; 
+                   // cout << "Invalid choice. Please try again." << endl; 
                     break;
 
             } 
-                cout<<" Your salary is:"<<salary<<"$"<<endl;
+                cout<<"Your salary is :"<<salary<<"$"<<endl;
                 if(month <=12){
                     annualIncome  = salary * 12;
                     cout<<" Annual income is :"<<annualIncome<<"$"<<endl;
@@ -280,7 +264,7 @@ void taxFinder(){
 
        // } while(choice!=0 && choice !=0); 
                         
-        cout<<" Enter your annual income: "; cin>>income;
+    cout<<" Enter your annual income: "; cin>>income;
     if (income <= 1500) {
         tax = 0;
         taxpercentage = 0;
